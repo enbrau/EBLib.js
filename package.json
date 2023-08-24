@@ -1,0 +1,25 @@
+{
+  "name": "eblib",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enbrau/eblib.js.git"
+  },
+  "keywords": [
+    "javascript",
+    "js",
+    "func",
+    "function"
+  ],
+  "author": "Enbrau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/enbrau/eblib.js/issues"
+  },
+  "homepage": "https://github.com/enbrau/eblib.js#readme"
+}
