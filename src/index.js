@@ -1,1 +1,6 @@
-export * from './lib/index.js'
+import * as type from './lib/type.is.js'
+
+/** @module eb */
+export default eb = {
+  type
+}
