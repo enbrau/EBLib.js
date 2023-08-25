@@ -17,7 +17,7 @@
     "function"
   ],
   "author": "Enbrau",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/enbrau/eblib.js/issues"
   },
