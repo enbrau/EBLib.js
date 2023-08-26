@@ -20,3 +20,13 @@ export function isNumber(x) {
 export function isFiniteNumber(x) {
   return typeof x === 'number' && isFinite(x)
 }
+
+/**
+ * Checks if value is empty.
+ * @param {*} x the value to check
+ * @returns true if the value is null, undefined or empty string.
+ * @since 0.0.1
+ */
+export function isEmpty(x) {
+  return x === undefined || x === null || x === ''
+}
