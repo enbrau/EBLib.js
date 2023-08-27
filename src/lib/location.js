@@ -1,5 +1,5 @@
 /**
- * Convert geo loation from wgs84(GPS) to gcj02(BMap)
+ * Convert geo loation from wgs84(GPS) to gcj02(AMap)
  * @param {object} geo location { lng: , lat:  }
  * @returns gcj02 location
  * @since 0.0.1
