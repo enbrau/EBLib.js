@@ -1,4 +1,4 @@
-import * as type from './lib/type.is.js'
+import * as type from './lib/type.js'
 
 /** @module eb */
 export default eb = {
