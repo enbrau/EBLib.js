@@ -7,7 +7,7 @@ export function getUA() {
 }
 
 /**
- * Aquire browser infomation
+ * Aquire browser information
  * @returns Browser type and version
  */
 export function getBrowser() {
@@ -102,4 +102,38 @@ export function getBrowser() {
   })()
   getBrowser = () => browser
   return browser
+}
+
+/**
+ * Aquire os information
+ * @returns os information
+ */
+export function getOS() {
+  return (navigator.userAgent.match(/[(](.*?)[)]/)?.[0] || '').replace(/[()]/g, "")
+}
+
+/**
+ * Aquire device ratio
+ * @returns device ratio
+ */
+export function getRatio() {
+  let ratio = 0;
+  let screen = window.screen;
+  let ua = navigator.userAgent.toLowerCase()
+  if (window.devicePixelRatio !== undefined) {
+    ratio = window.devicePixelRatio;
+  } else if (~ua.indexOf("msie")) {
+    if (screen.deviceXDPI && screen.logicalXDPI) {
+      ratio = screen.deviceXDPI / screen.logicalXDPI;
+    }
+  } else if (
+    window.outerWidth !== undefined &&
+    window.innerWidth !== undefined
+  ) {
+    ratio = window.outerWidth / window.innerWidth;
+  }
+  if (ratio) {
+    ratio = Math.round(ratio * 100);
+  }
+  return ratio;
 }
