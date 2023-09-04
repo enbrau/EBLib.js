@@ -137,3 +137,14 @@ export function getRatio() {
   }
   return ratio;
 }
+
+/**
+ * Aquire screen information
+ * @returns screen information
+ */
+export function getScreen() {
+  return {
+    width: window.screen.width,
+    height: window.screen.height,
+  }
+}
