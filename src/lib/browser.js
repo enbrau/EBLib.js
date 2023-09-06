@@ -4,7 +4,7 @@
  */
 export function getUA() {
   return navigator.userAgent
-}
+}n
 
 /**
  * Aquire browser information
@@ -159,22 +159,22 @@ export function getNetworkType() {
   networkStr = networkStr.toLowerCase().replace('nettype/', '');
   var networkType;
   switch(networkStr) {
-      case 'wifi':
-        networkType = 'wifi'
-        break
-      case '4g':
-        networkType = '4g'
-        break
-      case '3g':
-      case '3gnet':
-        networkType = '3g'
-        break
-      case '2g':
-        networkType = '2g'
-        break
-      default:
-        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
-        networkType = connection || 'other'
+    case 'wifi':
+      networkType = 'wifi'
+      break
+    case '4g':
+      networkType = '4g'
+      break
+    case '3g':
+    case '3gnet':
+      networkType = '3g'
+      break
+    case '2g':
+      networkType = '2g'
+      break
+    default:
+      const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+      networkType = connection.effectiveType || 'other'
   }
   return networkType
 }
