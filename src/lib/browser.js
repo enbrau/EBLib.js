@@ -148,3 +148,33 @@ export function getScreen() {
     height: window.screen.height,
   }
 }
+
+/**
+ * Aquire network type
+ * @returns network type
+ */
+export function getNetworkType() {
+  var ua = navigator.userAgent;
+  var networkStr = ua.match(/NetType\/\w+/) ? ua.match(/NetType\/\w+/)[0] : 'NetType/other';
+  networkStr = networkStr.toLowerCase().replace('nettype/', '');
+  var networkType;
+  switch(networkStr) {
+      case 'wifi':
+        networkType = 'wifi'
+        break
+      case '4g':
+        networkType = '4g'
+        break
+      case '3g':
+      case '3gnet':
+        networkType = '3g'
+        break
+      case '2g':
+        networkType = '2g'
+        break
+      default:
+        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection
+        networkType = connection || 'other'
+  }
+  return networkType
+}
