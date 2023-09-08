@@ -44,3 +44,36 @@ export function wgs84ToGcj02({ lng, lat }) {
     }
   }
 }
+
+/**
+ * Convert geo loation from wgs84(GPS) to bd09ll(BMap)
+ * @param {object} geo location { lng: , lat:  }
+ * @returns bd09ll location
+ * @since 0.0.1
+ */
+export function wgs84ToBd09ll({ lng, lat }) {
+  const xPI = 3.14159265358979324 * 3000.0 / 180.0
+  const PI = 3.1415926535897932384626
+  const a = 6378245.0
+  const ee = 0.00669342162296594323
+
+  let dlat = transformlat(lng - 105.0, lat - 35.0)
+  let dlng = transformlng(lng - 105.0, lat - 35.0)
+  let radlat = lat / 180.0 * PI
+  let magic = Math.sin(radlat)
+  magic = 1 - ee * magic * magic
+  let sqrtmagic = Math.sqrt(magic)
+  dlat = (dlat * 180.0) / ((a * (1 - ee)) / (magic * sqrtmagic) * PI)
+  dlng = (dlng * 180.0) / (a / sqrtmagic * Math.cos(radlat) * PI)
+  let mglat = lat + dlat
+  let mglng = lng + dlng
+
+  let z = Math.sqrt(mglng * mglng + mglat * mglat) + 0.00002 * Math.sin(mglat * xPI)
+  let theta = Math.atan2(mglat, mglng) + 0.000003 * Math.cos(mglng * xPI)
+  let bdlng = z * Math.cos(theta) + 0.0065
+  let bdlat = z * Math.sin(theta) + 0.006
+  return {
+    lng: bdlng,
+    lat: bdlat
+  }
+}
