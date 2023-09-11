@@ -30,3 +30,18 @@ export function isFiniteNumber(x) {
 export function isEmpty(x) {
   return x === undefined || x === null || x === ''
 }
+
+/**
+ * Check if value is an array
+ * @param {*} x the value to check
+ * @returns true if the value is an array
+ * @since 0.0.1
+ */
+export function isArray(x) {
+  if (!Array.isArray) {
+    Array.isArray = function(arg) {
+      return Object.prototype.toString.call(arg) === '[object Array]'
+    }
+  }
+  return Array.isArray(x)
+}
