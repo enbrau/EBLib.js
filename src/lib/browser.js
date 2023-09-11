@@ -5,7 +5,7 @@
  */
 export function getUA() {
   return navigator.userAgent
-}n
+}
 
 /**
  * Aquire browser information
