@@ -1,6 +1,7 @@
 /**
  * Aquire user agent
  * @returns User Agent
+ * @since 0.0.1
  */
 export function getUA() {
   return navigator.userAgent
@@ -9,6 +10,7 @@ export function getUA() {
 /**
  * Aquire browser information
  * @returns Browser type and version
+ * @since 0.0.1
  */
 export function getBrowser() {
   const check360 = function() {
@@ -107,6 +109,7 @@ export function getBrowser() {
 /**
  * Aquire os information
  * @returns os information
+ * @since 0.0.1
  */
 export function getOS() {
   return (navigator.userAgent.match(/[(](.*?)[)]/)?.[0] || '').replace(/[()]/g, "")
@@ -115,6 +118,7 @@ export function getOS() {
 /**
  * Aquire device ratio
  * @returns device ratio
+ * @since 0.0.1
  */
 export function getRatio() {
   let ratio = 0;
@@ -141,6 +145,7 @@ export function getRatio() {
 /**
  * Aquire screen information
  * @returns screen information
+ * @since 0.0.1
  */
 export function getScreen() {
   return {
@@ -152,6 +157,7 @@ export function getScreen() {
 /**
  * Aquire network type
  * @returns network type
+ * @since 0.0.1
  */
 export function getNetworkType() {
   var ua = navigator.userAgent;
