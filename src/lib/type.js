@@ -45,3 +45,13 @@ export function isArray(x) {
   }
   return Array.isArray(x)
 }
+
+/**
+ * Check if the value is boolean
+ * @param {*} x the value to check
+ * @returns true if the value is boolean
+ * @since 0.0.1
+ */
+export function isBoolean(x) {
+  return typeof x === 'boolean'
+}
