@@ -17,6 +17,14 @@ export function serialNo() {
 }
 
 /**
+ * Generate random serial number
+ * @returns random number
+ */
+export function prefixedSerialNo(prefix) {
+  return prefix + '' + parseInt(new Date().getTime() + '' + Math.floor(Math.random() * (999 - 100 + 1) + 100))
+}
+
+/**
  * Generater uuid
  * @returns uuid
  */
