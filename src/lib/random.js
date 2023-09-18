@@ -3,6 +3,7 @@
  * @param {Number} min minimum number
  * @param {Number} max maximum number
  * @returns random number
+ * @since 0.0.1
  */
 export function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
@@ -11,6 +12,7 @@ export function randomNumber(min, max) {
 /**
  * Generate random serial number
  * @returns random number
+ * @since 0.0.1
  */
 export function serialNo() {
   return parseInt(new Date().getTime() + '' + Math.floor(Math.random() * (999 - 100 + 1) + 100))
@@ -19,6 +21,7 @@ export function serialNo() {
 /**
  * Generate random serial number
  * @returns random number
+ * @since 0.0.1
  */
 export function prefixedSerialNo(prefix) {
   return prefix + '' + parseInt(new Date().getTime() + '' + Math.floor(Math.random() * (999 - 100 + 1) + 100))
@@ -27,6 +30,7 @@ export function prefixedSerialNo(prefix) {
 /**
  * Generater uuid
  * @returns uuid
+ * @since 0.0.1
  */
 export function uuid() {
   if (typeof crypto === 'object') {
