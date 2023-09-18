@@ -15,6 +15,7 @@ export function toAmount(num, prefix) {
  * Transform number into Chinese amount
  * @param {*} num 
  * @returns Chinese amount string
+ * @since 0.0.1
  */
 export function toChineseAmount(num) {
   if (num === 0) {
