@@ -42,3 +42,21 @@ export function toChineseAmount(num) {
   }
   return str.replace(/零(仟|佰|拾|角)/g, "零").replace(/(零)+/g, "零").replace(/零(万|亿|元)/g, "$1").replace(/(亿)万/g, "$1$2").replace(/^元零?|零分/g, "").replace(/元$/g, "元整");
 }
+
+/**
+ * Transform number into file size
+ * @param {*} num 
+ * @returns file size string
+ * @since 0.0.1
+ */
+export function toFileSize(num) {
+  let fileSizeByte = bum
+  let fileSizeMsg = ''
+  if (fileSizeByte < 1048576) fileSizeMsg = (fileSizeByte / 1024).toFixed(2) + 'KB'
+  else if (fileSizeByte === 1048576) fileSizeMsg = '1MB'
+  else if (fileSizeByte > 1048576 && fileSizeByte < 1073741824) fileSizeMsg = (fileSizeByte / (1024 * 1024)).toFixed(2) + 'MB'
+  else if (fileSizeByte > 1048576 && fileSizeByte === 1073741824) fileSizeMsg = '1GB'
+  else if (fileSizeByte > 1073741824 && fileSizeByte < 1099511627776) fileSizeMsg = (fileSizeByte / (1024 * 1024 * 1024)).toFixed(2) + 'GB'
+  else fileSizeMsg = '>1TB'
+  return fileSizeMsg
+}
