@@ -36,16 +36,16 @@ function WS(opts) {
       return
     }
 
-    this.webSocket.onmessage = opts.onmessage || function(e) {
-      // TODO
+    if (opts.onmessage) {
+      this.webSocket.onmessage = opts.onmessage
     }
 
-    this.webSocket.onerror = opts.onerror || function(e) {
-      // TODO
+    if (opts.onclose) {
+      this.webSocket.onclose = opts.onclose
     }
 
-    this.webSocket.onclose = opts.onclose || function(e) {
-      // TODO
+    if (opts.onerror) {
+      this.webSocket.onerror = opts.onerror
     }
   }
 
