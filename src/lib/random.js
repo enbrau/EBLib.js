@@ -59,3 +59,18 @@ export function uuid() {
     return (c === 'x' ? random : (random & 0x3) | 0x8).toString(16);
   })
 }
+
+/**
+ * generate random string
+ * @param {*} len length of the string
+ * @returns 
+ */
+export function randomString(len) {
+  let chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz123456789';
+  let strLen = chars.length;
+  let randomStr = '';
+  for (let i = 0; i < len; i++) {
+      randomStr += chars.charAt(Math.floor(Math.random() * strLen));
+  }
+  return randomStr;
+}
