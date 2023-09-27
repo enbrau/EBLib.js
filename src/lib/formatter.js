@@ -60,3 +60,12 @@ export function toFileSize(num) {
   else fileSizeMsg = '>1TB'
   return fileSizeMsg
 }
+
+/**
+ * Transform first letter to upper case
+ * @param {*} str 
+ * @returns 
+ */
+export function firstLetterToUpperCase(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
