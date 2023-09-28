@@ -69,3 +69,21 @@ export function toFileSize(num) {
 export function firstLetterToUpperCase(str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
+
+/**
+ * Transform camel case to kebab case
+ * @param {*} str 
+ * @returns 
+ */
+export function camelCaseToKebabCase(str) {
+  return str.replace(/[A-Z]/g, (item) => '-' + item.toLowerCase())
+}
+
+/**
+ * Transform kebab case to camel case
+ * @param {*} str 
+ * @returns 
+ */
+export const kebabCaseToCamelCase = (str) => {
+  return str.replace( /-([a-z])/g, (i, item) => item.toUpperCase())
+}
