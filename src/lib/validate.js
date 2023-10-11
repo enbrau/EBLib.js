@@ -53,6 +53,15 @@ export function isTel(value) {
  * @param {*} value 
  * @returns 
  */
+export function isChinesePostCode(value) {
+  return /^[1-9][0-9]{5}$/.test(value.toString())
+}
+
+/**
+ * 
+ * @param {*} value 
+ * @returns 
+ */
 export function containsChinese(value) {
   return /[\u4e00-\u9fa5]/.test(value);
 }
